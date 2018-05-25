@@ -144,18 +144,6 @@ def sign_in():
         user.save()
         return redirect(url_for('login'))
 
-@app.route('/service-request')
-def servicerequest():
-    all_service = Service.objects()
-    users = User.objects()
-    order = Order(  is_accepted=False ),                  
-    order.save()
-    return "Requested"
-
-@app.route('/order')
-def order():
-    orders = Order.objects()
-    return render_template('order.html', orders=orders)
 
 if __name__ == '__main__':
   app.run(debug=True)
